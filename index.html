@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <div class="navbar flex items-center py-2.5 lg:py-3 text-sm shadow-sm">
+      <div class="w-full mx-auto px-4 lg:px-12">
+        <div class="flex items-center flex-col lg:flex-row">
+          <div class="nav-brand flex justify-between w-full lg:w-auto">
+            <div class="logo flex items-center">
+              <span class="w-5 h-5 bg-black mr-2 rounded-full"></span>
+              <span>Logo</span>
+            </div>
+
+            <button
+              id="menu-toggle"
+              type="button"
+              class="relative inline-grid lg:hidden size-7 place-items-center rounded-md text-gray-950 hover:bg-gray-950/5 dark:text-white dark:hover:bg-white/10 -ml-1.5"
+              aria-label="Open navigation menu"
+            >
+              <span
+                class="absolute top-1/2 left-1/2 size-11 -translate-1/2 pointer-fine:hidden"
+              ></span
+              ><svg viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                <path
+                  fill-rule="evenodd"
+                  d="M2 4.75A.75.75 0 0 1 2.75 4h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75Zm0 6.5a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="menu-wrapper lg:flex items-center flex-col lg:flex-row w-full hidden"
+          >
+            <ul
+              class="menu gap-3.5 lg:gap-8 flex items-center flex-col lg:flex-row lg:pl-10 w-full mt-5 lg:mt-0 flex-1"
+            >
+              <li
+                class="relative border border-neutral-100 lg:border-transparent hover:bg-neutral-100 w-full lg:w-auto rounded-lg text-center lg:px-3"
+              >
+                <a class="inline-block py-2.5" href="">Home</a>
+              </li>
+              <li
+                class="relative border border-neutral-100 lg:border-transparent hover:bg-neutral-100 w-full lg:w-auto rounded-lg text-center lg:px-3"
+              >
+                <a class="inline-block py-2.5" href="">Reports</a>
+              </li>
+              <li
+                class="relative border border-neutral-100 lg:border-transparent hover:bg-neutral-100 w-full lg:w-auto rounded-lg text-center lg:px-3"
+              >
+                <a class="inline-block py-2.5" href="">Dashboard</a>
+              </li>
+              <li
+                class="relative border border-neutral-100 lg:border-transparent hover:bg-neutral-100 w-full lg:w-auto rounded-lg text-center lg:px-3"
+              >
+                <a class="inline-block py-2.5" href="">Settings</a>
+              </li>
+            </ul>
+
+            <ul
+              class="menu menu-right lg:ml-auto gap-3.5 flex items-center lg:pl-10 w-full lg:w-auto mt-4 lg:mt-0"
+            >
+              <div class="search relative w-full">
+                <svg
+                  class="size-5 absolute top-1/2 -translate-y-1/2 left-2.5"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_239)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M21.5306 20.4694L16.8366 15.7762C19.6629 12.383 19.3204 7.36693 16.0591 4.38935C12.7978 1.41176 7.77134 1.526 4.64867 4.64867C1.526 7.77134 1.41176 12.7978 4.38935 16.0591C7.36693 19.3204 12.383 19.6629 15.7762 16.8366L20.4694 21.5306C20.7624 21.8237 21.2376 21.8237 21.5306 21.5306C21.8237 21.2376 21.8237 20.7624 21.5306 20.4694ZM3.75 10.5C3.75 6.77208 6.77208 3.75 10.5 3.75C14.2279 3.75 17.25 6.77208 17.25 10.5C17.25 14.2279 14.2279 17.25 10.5 17.25C6.77379 17.2459 3.75413 14.2262 3.75 10.5Z"
+                      fill="#61758A"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_239">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+
+                <input
+                  type="text"
+                  class="bg-neutral-100 rounded-lg py-2 indent-9 w-full lg:w-40"
+                  placeholder="Search"
+                />
+              </div>
+              <li class="relative hidden lg:inline-block">
+                <img
+                  src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt=""
+                  class="inline-block size-9 rounded-full ring-2 ring-white"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app lg:grid lg:grid-cols-32 mx-auto lg:pl-12 items-baseline">
+      <main
+        class="mx-auto lg:col-span-23 w-full container mx-auto pb-9 pt-5 lg:pt-6 border-r border-neutral-200 pl-4 pr-4 lg:pl-0 lg:pr-6"
+      >
+        <h2
+          class="text-neutral-950 text-xl lg:text-2xl font-semibold mb-5 lg:mb-7 xl:mb-8"
+        >
+          Analytics Dashboard
+        </h2>
+
+        <div class="card-section-stack space-y-12">
+          <div class="card-section-wrapper">
+            <card-title>
+              <h2
+                slot="card-title"
+                class="text-sm lg:text-lg text-neutral-900 font-semibold mb-3 lg:mb-3.5"
+              >
+                Key Performance Indicators
+              </h2>
+            </card-title>
+
+            <div class="grid lg:grid-cols-4 gap-5">
+              <my-card>
+                <h2 slot="title" class="capitalize font-medium mb-1">
+                  Total users
+                </h2>
+                <p slot="content" class="text-xl font-bold mb-1">12,345</p>
+                <p slot="content" class="text-green-700 font-medium">+5%</p>
+              </my-card>
+
+              <my-card>
+                <h2 slot="title" class="capitalize font-medium mb-1">
+                  Active users
+                </h2>
+                <p slot="content" class="text-xl font-bold mb-1">6,745</p>
+                <p slot="content" class="text-green-700 font-medium">+5%</p>
+              </my-card>
+
+              <my-card>
+                <h2 slot="title" class="capitalize font-medium mb-1">
+                  Conversion Rate
+                </h2>
+                <p slot="content" class="text-xl font-bold mb-1">15.2%</p>
+                <p slot="content" class="text-red-600 font-medium">+4%</p>
+              </my-card>
+
+              <my-card>
+                <h2 slot="title" class="capitalize font-medium mb-1">
+                  Monthly Sales Growth
+                </h2>
+                <p slot="content" class="text-xl font-bold mb-1">17.9%</p>
+                <p slot="content" class="text-red-600 font-medium">-2%</p>
+              </my-card>
+            </div>
+          </div>
+
+          <div class="card-section-wrapper">
+            <card-title>
+              <h2
+                slot="card-title"
+                class="text-sm lg:text-lg text-neutral-900 font-semibold mb-3 lg:mb-3.5"
+              >
+                User Engagement
+              </h2>
+            </card-title>
+
+            <div class="grid lg:grid-cols-2 gap-5">
+              <div class="card border border-neutral-300 rounded-xl p-5 lg:p-6">
+                <h2 slot="title" class="capitalize font-medium mb-1">
+                  Total users
+                </h2>
+                <p slot="content" class="text-xl font-bold mb-1">12,345</p>
+                <p slot="content" class="text-green-700 font-medium">+5%</p>
+
+                <interpolation-chart></interpolation-chart>
+              </div>
+
+              <div class="card border border-neutral-300 rounded-xl p-5 lg:p-6">
+                <h2 slot="title" class="capitalize font-medium mb-1">
+                  Conversion Rate
+                </h2>
+                <p slot="content" class="text-xl font-bold mb-1">15.2%</p>
+                <p slot="content" class="text-red-600 font-medium">-2%</p>
+
+                <bar-chart></bar-chart>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-section-wrapper">
+            <card-title>
+              <h2
+                slot="card-title"
+                class="text-sm lg:text-lg text-neutral-900 font-semibold mb-3 lg:mb-3.5"
+              >
+                Top Performing Products
+              </h2>
+            </card-title>
+
+            <div class="card border border-neutral-300 rounded-xl">
+              <table class="w-full table-fixed border-collapse text-sm">
+                <thead class="h-12 text-neutral-950">
+                  <tr>
+                    <th
+                      class="border-b border-gray-200 p-4 pt-0 pb-0 pl-8 text-left font-medium"
+                    >
+                      Product
+                    </th>
+                    <th
+                      class="border-b border-gray-200 p-4 pt-0 pb-0 text-left font-medium"
+                    >
+                      Revenue
+                    </th>
+                    <th
+                      class="border-b border-gray-200 p-4 pt-0 pb-0 pr-8 text-left font-medium"
+                    >
+                      Units Sold
+                    </th>
+                    <th
+                      class="border-b border-gray-200 p-4 pt-0 pb-0 pr-8 text-left font-medium"
+                    >
+                      Profit Margin
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white dark:bg-gray-800">
+                  <tr>
+                    <td class="border-b border-gray-100 p-4 pl-8 text-gray-800">
+                      Product A
+                    </td>
+                    <td
+                      class="border-b border-gray-100 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+                    >
+                      $12000
+                    </td>
+                    <td
+                      class="border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+                    >
+                      6533
+                    </td>
+                    <td
+                      class="border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+                    >
+                      20%
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-b border-gray-100 p-4 pl-8 text-gray-800">
+                      Product B
+                    </td>
+                    <td
+                      class="border-b border-gray-100 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+                    >
+                      $6555
+                    </td>
+                    <td
+                      class="border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+                    >
+                      1972
+                    </td>
+                    <td
+                      class="border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+                    >
+                      30%
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-b border-gray-100 p-4 pl-8 text-gray-800">
+                      Product C
+                    </td>
+                    <td
+                      class="border-b border-gray-200 p-4 text-gray-500 dark:border-gray-600 dark:text-gray-400"
+                    >
+                      $6655
+                    </td>
+                    <td
+                      class="border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+                    >
+                      4577
+                    </td>
+                    <td
+                      class="border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+                    >
+                      50%
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="border-b border-gray-100 p-4 pl-8 text-gray-800">
+                      Product D
+                    </td>
+                    <td
+                      class="border-b border-gray-200 p-4 text-gray-500 dark:border-gray-600 dark:text-gray-400"
+                    >
+                      $10500
+                    </td>
+                    <td
+                      class="border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+                    >
+                      3455
+                    </td>
+                    <td
+                      class="border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+                    >
+                      40%
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="border-b border-gray-100 p-4 pl-8 text-gray-800">
+                      Product E
+                    </td>
+                    <td
+                      class="border-b border-gray-200 p-4 text-gray-500 dark:border-gray-600 dark:text-gray-400"
+                    >
+                      Earth, Wind, and Fire
+                    </td>
+                    <td
+                      class="border-b border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400"
+                    >
+                      2975
+                    </td>
+                    <td
+                      class="border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+                    >
+                      28%
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+      <aside
+        class="col-span-9 text-sm sticky top-0 h-[calc(100dvh-64px)] relative"
+      >
+        <div class="pt-8 pl-6 pr-6 pb-6 flex flex-col justify-between h-full">
+          <div class="chat-head">
+            <h2
+              class="text-neutral-950 text-2xl lg:text-2xl font-semibold mb-2"
+            >
+              AI Assistant
+            </h2>
+            <p class="max-w-xs">
+              Hello! What can I assist you with in your data project today?
+            </p>
+          </div>
+
+          <div class="chat-wrapper pt-5 lg:pt-8">
+            <p class="text-xs text-neutral-500 mb-1">AI Assistant</p>
+            <p
+              class="text-base text-neutral-950 bg-neutral-100 rounded-lg p-2.5 inline-block"
+            >
+              Hi! Need help analyzing something? 😊
+            </p>
+          </div>
+
+          <div class="chat-box-wrapper mt-auto relative sticky bottom-0">
+            <textarea
+              name="chat-input"
+              id="chat-box"
+              class="border border-neutral-200 rounded-2xl p-4 w-full focus:outline-none focus:ring-1 focus:ring-slate-100 focus:border-slate-500 mt-auto"
+              placeholder="Ask anything"
+              rows="5"
+            ></textarea>
+            <svg
+              class="absolute right-4 bottom-4 p-1.5 hover:bg-neutral-100 size-9 rounded-lg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.00004 12L3.26904 3.125C9.80191 5.025 15.9624 8.02646 21.485 12C15.9627 15.9735 9.80257 18.9749 3.27004 20.875L6.00004 12ZM6.00004 12H13.5"
+                stroke="black"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      type="module"
+      src="./src/components/charts/interpolation-chart.js"
+    ></script>
+    <script type="module" src="./src/components/charts/bar-charts.js"></script>
+    <script type="module" src="./src/components/Card/card.js"></script>
+    <script
+      type="module"
+      src="./src/components/CardTitle/card-title.js"
+    ></script>
+    <script type="module" src="/src/main.js"></script>
+
+    <script>
+      let menuBtn = document.getElementById("menu-toggle");
+      let menu = document.querySelector(".menu-wrapper");
+      menuBtn.addEventListener("click", function (e) {
+        menu.classList.toggle("show-menu");
+      });
+    </script>
+  </body>
+</html>
